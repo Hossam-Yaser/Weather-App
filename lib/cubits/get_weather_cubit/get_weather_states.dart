@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class NoWeatherBody extends StatelessWidget {
-  const NoWeatherBody({super.key});
+class WeatherState {}
 
-  @override
-  Widget build(BuildContext context) {
+class NoWeatherState extends WeatherState {
+  Widget noInfoFunction() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
       child: Center(
@@ -21,4 +20,11 @@ class NoWeatherBody extends StatelessWidget {
       ),
     );
   }
+}
+
+class LoadedWeatherState extends WeatherState {}
+
+class WeatherFailureState extends WeatherState {
+  final String? errorMessage;
+  WeatherFailureState({required this.errorMessage});
 }
